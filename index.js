@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const Mensagem = require("./models/Mensagem");
+const contatoRoutes = require("./routes/contatoRoutes");
+require("dotenv").config();
 
 // Importar as rotas
 const contatoRoutes = require("./routes/contatoRoutes");
@@ -18,7 +20,7 @@ app.get("/", (req, res) => {
 
 // Conectar ao MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/contatoDB", {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
