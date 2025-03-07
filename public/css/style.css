@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+.mensagens-container {
+  display: flex; /* Define que os elementos dentro dele vão se organizar em uma "linha" ou "coluna" */
+  flex-direction: column; /* Organiza os elementos em coluna, um abaixo do outro */
+  align-items: center; /* Centraliza os elementos horizontalmente */
+  gap: 15px; /* Define um espaço entre cada mensagem */
+  margin-top: 20px; /* Adiciona uma margem no topo para dar um espaçamento da parte superior */
+}
+
+.mensagem-card {
+  width: 80%; /* Define a largura da tela */
+  max-width: 500px; /* Limita a largura máxima, evitando que fique muito grande */
+  background: #fff;
+  padding: 15px; /* Adiciona um espaço interno em todos os lados, para evitar que o texto encoste nas bordas */
+  border-radius: 8px; /* Arredonda as bordas*/
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra, dando um efeito 3D */
+  text-align: left; /* Alinha o texto à esquerda */
+}

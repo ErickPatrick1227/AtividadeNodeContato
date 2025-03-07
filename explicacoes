@@ -1,0 +1,6 @@
+__dirname → Retorna o diretório atual do arquivo.
+"views", "index.html" → Caminho para o arquivo index.html dentro da pasta views.
+filePath → Armazena o caminho do arquivo a ser enviado ao cliente.
+path.join → Constrói o caminho para o arquivo index.html dentro da pasta views
+
+usamos <%- include("partials/header") %> e <%- include("partials/footer") %> para importar o cabeçalho e o rodapé automaticamente.

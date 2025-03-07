@@ -1,0 +1,31 @@
+<!-- views/mensagens.ejs -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mensagens Enviadas</title>
+    <link rel="stylesheet" href="/public/css/style.css" />
+  </head>
+  <body>
+    <!-- Aqui você pode incluir o cabeçalho, se necessário -->
+    <%- include('partials/header', { title: 'Mensagens Enviadas' }) %>
+
+    <h1>Mensagens Enviadas</h1>
+
+    <!-- Exibe as mensagens -->
+    <div class="mensagens-container">
+      <% mensagens.forEach(mensagem => { %>
+      <div class="mensagem-card">
+        <p><strong>Nome:</strong> <%= mensagem.nome %></p>
+        <p><strong>Email:</strong> <%= mensagem.email %></p>
+        <p><strong>Mensagem:</strong> <%= mensagem.mensagem %></p>
+      </div>
+      <% }); %>
+    </div>
+
+    <!-- Aqui você pode incluir o rodapé, se necessário -->
+    <%- include('partials/footer') %>
+  </body>
+</html>
