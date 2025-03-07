@@ -1,8 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const app = express();
 const Mensagem = require("./models/Mensagem");
-const contatoRoutes = require("./routes/contatoRoutes");
 require("dotenv").config();
 
 // Importar as rotas
@@ -17,19 +15,6 @@ app.get("/sobre", (req, res) => {
 app.get("/", (req, res) => {
   res.render("index", { title: "Início" }); // Renderizando index.ejs
 });
-
-// Conectar ao MongoDB
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Conectado ao MongoDB com sucesso!");
-  })
-  .catch((err) => {
-    console.error("Erro ao conectar no MongoDB: ", err);
-  });
 
 app.set("view engine", "ejs"); // Configurando o mecanismo de visualização para EJS
 
@@ -63,3 +48,4 @@ app.get("/mensagens", (req, res) => {
       res.status(500).send("Erro ao buscar mensagens. Tente novamente.");
     });
 });
+require("./database/connection");
